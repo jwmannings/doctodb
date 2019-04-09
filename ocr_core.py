@@ -4,7 +4,11 @@ except ImportError:
     import Image
 import pytesseract
 import os
-pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+
+if os.name == 'nt':
+    pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+else:
+    pass
 
 input_folder = './input'
 output_folder = './output'
